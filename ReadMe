@@ -1,0 +1,14 @@
+Anatomy of SQLi attack
+======================
+
+Saw this blog post here: (https://sysadmincasts.com/episodes/21-anatomy-of-a-sql-injection-attack-leading-to-code-execution). Made ubuntu vm that uses mysql, php7, and nginx instead of cent apache one for testing. 
+
+
+Instructions
+-----------
+
+  * git clone
+  * adjust Vagrant ports if you already have 3306 or 8080 occupied. 
+  * vagrant up
+  * follow along the blog post above with localhost:8080/id=1
+  * vagrant destory
