@@ -28,6 +28,10 @@ EOF
     service mysql restart
 
 
+cat <<EOF >> /etc/mysql/mariadb.conf.d/50-server.cnf
+general-log
+general-log-file = /var/log/mysql/queries.log
+log-output=file
 }
 
 
@@ -101,8 +105,8 @@ if (!$link = new mysqli('localhost', 'Steeef', 'orange-45', 'butts')) {
     exit;
 }
 
-if (isset($_GET['id']) && is_numeric($_GET['id'])) {
-    $id = (int) $_GET['id'];
+if (isset($_GET['id'])) {
+    $id = $_GET['id'];
 } else {
     $id = 1;
 }
